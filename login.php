@@ -28,12 +28,12 @@
 
                 <form action="" method="post">
                     <div class="mb-3">
-                        <label for="email" class="form-label text-light">Email</label>
+                        <label for="email" class="form-label text-light">Email :</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Emter your email">
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label text-light">Password</label>
+                        <label for="password" class="form-label text-light">Password :</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password">
                     </div>
 
