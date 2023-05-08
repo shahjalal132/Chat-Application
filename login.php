@@ -18,7 +18,7 @@
 <body>
 
 
-    <div class="container">
+    <div class="container wrapper">
         <div class="row">
             <div class="col-md-3"></div>
 
@@ -28,19 +28,19 @@
 
                 <form action="" method="post">
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label text-light">Email</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Emter your email">
                     </div>
 
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label text-light">Password</label>
                         <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password">
                     </div>
 
-                    <input type="submit" class="btn btn-success" name="login" value="Login">
+                    <input type="submit" class="btn btn-warning" name="login" value="Login">
                 </form>
 
-                <p class="text-light mt-3">Dont't have an account? <a class="text-warning fw-bold" href="register.php">Registration</a></p>
+                <p class="text-light mt-3">Dont't have an account? <a class="text-warning" href="register.php">Registration</a></p>
 
             </div>
 

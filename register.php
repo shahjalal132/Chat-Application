@@ -18,7 +18,7 @@
 <body>
 
 
-    <div class="container">
+    <div class="container mt-3">
         <div class="row">
             <div class="col-md-3"></div>
 
@@ -28,22 +28,22 @@
                     <form action="" method="post">
 
                         <div class="mb-3">
-                            <label for="first_name" class="form-label">First Name :</label>
+                            <label for="first_name" class="form-label text-light">First Name :</label>
                             <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" aria-describedby="helpId">
                         </div>
 
                         <div class="mb-3">
-                            <label for="last_name" class="form-label">Last Name :</label>
+                            <label for="last_name" class="form-label text-light">Last Name :</label>
                             <input type="text" name="last_name" id="last_name" class="form-control" placeholder="First Name" aria-describedby="helpId">
                         </div>
 
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label text-light">Email</label>
                             <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Email Address">
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label text-light">Password</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                         </div>
 
@@ -51,7 +51,7 @@
 
                     </form>
 
-                    <p class="mt-3 text-light">Have an account? <a class="text-warning fw-bold" href="login.php">Login</a></p>
+                    <p class="mt-3 text-light">Have an account? <a class="text-warning" href="login.php">Login</a></p>
 
                 </div>
             </div>
