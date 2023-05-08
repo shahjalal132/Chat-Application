@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: tahoma;
+    background: url(images/registration_form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rowClass{
+    position: relative;
+}
+
+.center_point{
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
