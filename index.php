@@ -17,28 +17,28 @@
 
 <body>
 
-<div class="container">
-    <div class="row rowClass">
-        <div class="col-md-4"></div>
+    <div class="container">
+        <div class="row rowClass">
+            <div class="col-md-4"></div>
 
-        <div class="col-md-4 shadow center_point text-center p-3">
-            <h2 class="text-center text-warning mb-3">Choice a Link</h2>
+            <div class="col-md-4 shadow center_point text-center p-3 box">
+                <h2 class="text-center text-warning mb-3">Choice a Link</h2>
 
-            <p class="text-light">If don't have account please <a class="text-warning" href="register.php">Registration</a></p>
-            <p class="text-light">Already have an account please  <a class="text-warning" href="login.php">Login</a></p>
+                <p class="text-light">If don't have account please <a class="text-warning registration" href="register.php">Registration</a></p>
+                <p class="text-light">Already have an account please <a class="text-warning login" href="login.php">Login</a></p>
+            </div>
+
+            <div class="col-md-4"></div>
         </div>
-
-        <div class="col-md-4"></div>
     </div>
-</div>
 
 
 
 
 
 
-<script src="js/jquery.js"></script>
-<script src="js/scripts.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 

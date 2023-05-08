@@ -1,3 +1,25 @@
+<?php
+
+require_once('functions.php');
+
+if (isset($_POST['register'])) {
+
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
+
+    $query = mysqli_query($connection, "INSERT INTO users2 (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password') ");
+
+    if ($query) {
+        echo 'You have been Registration successfully';
+    }
+
+    die();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,36 +44,38 @@
         <div class="row">
             <div class="col-md-3"></div>
 
-            <div class="col-md-6 shadow mt-5 p-4">
+            <div class="col-md-6 shadow mt-5 p-4 box">
                 <h2 class="text-center text-warning mb-3">Registration Form</h2>
                 <div class="reg_form">
-                    <form action="" method="post">
+                    <form action="" method="post" class="user_registration">
 
                         <div class="mb-3">
                             <label for="first_name" class="form-label text-light">First Name :</label>
-                            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" aria-describedby="helpId">
+                            <input type="text" name="first_name" id="first_name" class="form-control common_input" placeholder="First Name" aria-describedby="helpId">
                         </div>
 
                         <div class="mb-3">
                             <label for="last_name" class="form-label text-light">Last Name :</label>
-                            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="First Name" aria-describedby="helpId">
+                            <input type="text" name="last_name" id="last_name" class="form-control common_input" placeholder="First Name" aria-describedby="helpId">
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label text-light">Email :</label>
-                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Email Address">
+                            <input type="email" class="form-control common_input" name="email" id="email" aria-describedby="emailHelpId" placeholder="Email Address">
                         </div>
 
                         <div class="mb-3">
                             <label for="password" class="form-label text-light">Password :</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                            <input type="password" class="form-control common_input" name="password" id="password" placeholder="Password">
                         </div>
 
                         <input type="submit" class="btn btn-warning" name="register" value="Registration">
 
                     </form>
 
-                    <p class="mt-3 text-light">Have an account? <a class="text-warning" href="login.php">Login</a></p>
+                    <p class="success"></p>
+
+                    <p class="mt-3 text-light">Have an account? <a class="text-warning login" href="login.php">Login</a></p>
 
                 </div>
             </div>
