@@ -1,32 +1,10 @@
 <?php
 
 if (isset($_POST['login'])) {
-?>
-
-    <div class="text-start">
-
-        <h3 class="text-center text-warning mb-3">Login Page</h3>
-
-        <form action="" method="post">
-            <div class="mb-3">
-                <label for="email" class="form-label text-light">Email :</label>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Emter your email">
-            </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label text-light">Password :</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password">
-            </div>
-
-            <input type="submit" class="btn btn-warning" name="login" value="Login">
-        </form>
-
-        <p class="text-light mt-3">Dont't have an account? <a class="text-warning registration" href="register.php">Registration</a></p>
-
-    </div>
 
 
-<?php die();
+
+    die();
 }
 ?>
 
