@@ -1,5 +1,10 @@
 <?php
+session_start();
+require_once('functions.php');
 
+if (!user_logged_in()) {
+  header('location: index.php');
+}
 
 
 ?>
@@ -21,8 +26,10 @@
 </head>
 
 <body>
-  
-<h2 class="text-center text-warning">This is chat page</h2>
+
+  <h2 class="text-center text-warning mt-5">This is chat page</h2>
+
+  <a class="btn btn-danger ms-5" href="logout.php">Log Out</a>
 
 
 </body>

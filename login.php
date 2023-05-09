@@ -1,8 +1,32 @@
 <?php
 
+session_start();
+require_once('functions.php');
+
+if (user_logged_in()) {
+    header('location: chat.php');
+}
+
 if (isset($_POST['login'])) {
 
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    $query = mysqli_query($connection, "SELECT * FROM users2 WHERE email = '$email' ");
+    $fetch = mysqli_fetch_assoc($query);
+
+    $db_password = $fetch['password'];
+    $db_firstName = $fetch['first_name'];
+    $db_lastName = $fetch['last_name'];
+
+    if ($db_password == md5($password)) {
+
+        $_SESSION['login'] = 'successfull';
+        $_SESSION['first_name'] = $db_firstName;
+        $_SESSION['last_name'] = $db_lastName;
+
+        header('location: chat.php');
+    }
 
     die();
 }
@@ -36,18 +60,18 @@ if (isset($_POST['login'])) {
 
                 <h3 class="text-center text-warning mb-3">Login Page</h3>
 
-                <form action="" method="post" class="user_login">
+                <form action="" method="post" class="login">
                     <div class="mb-3">
                         <label for="email" class="form-label text-light">Email :</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Emter your email">
+                        <input type="email" class="form-control common_input" name="email" id="email" aria-describedby="emailHelpId" placeholder="Emter your email">
                     </div>
 
                     <div class="mb-3">
                         <label for="password" class="form-label text-light">Password :</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password">
+                        <input type="password" class="form-control common_input" name="password" id="password" placeholder="Enter your Password">
                     </div>
 
-                    <input type="submit" class="btn btn-warning" name="login" value="Login">
+                    <input type="submit" class="btn btn-warning login" name="login" value="Login">
                 </form>
 
                 <p class="text-light mt-3">Dont't have an account? <a class="text-warning registration" href="register.php">Registration</a></p>

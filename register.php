@@ -1,6 +1,11 @@
 <?php
 
+session_start();
 require_once('functions.php');
+
+if (user_logged_in()) {
+    header('location: chat.php');
+}
 
 if (isset($_POST['register'])) {
 

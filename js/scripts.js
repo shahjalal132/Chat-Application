@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  
   // Registration data sent to database with ajax
 
   $(".user_registration").submit(function (e) {
@@ -29,8 +28,25 @@ $(document).ready(function () {
     return false;
   });
 
-// Login Validation with ajax
+  // Login Validation with ajax
 
+  $(".user_login").submit(function (e) {
+    e.preventDefault();
 
+    var email = $("input[name='email']").val();
+    var password = $("input[name='password']").val();
 
+    $.ajax({
+      type: "POST",
+      url: "login.php",
+      data: {
+        login: "has",
+        email: email,
+        password: password,
+      },
+      success: function (output) {
+        $(".common_input").val("");
+      },
+    });
+  });
 });
