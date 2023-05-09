@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  
+  // Registration data sent to database with ajax
+
   $(".user_registration").submit(function (e) {
     e.preventDefault();
 
@@ -25,4 +28,9 @@ $(document).ready(function () {
 
     return false;
   });
+
+// Login Validation with ajax
+
+
+
 });

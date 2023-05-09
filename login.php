@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
 
                 <h3 class="text-center text-warning mb-3">Login Page</h3>
 
-                <form action="" method="post">
+                <form action="" method="post" class="user_login">
                     <div class="mb-3">
                         <label for="email" class="form-label text-light">Email :</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Emter your email">

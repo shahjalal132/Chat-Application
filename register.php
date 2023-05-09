@@ -9,10 +9,16 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $query = mysqli_query($connection, "INSERT INTO users2 (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password') ");
+    $has_email = mysqli_query($connection, "SELECT * FROM users2 WHERE email = '$email' ");
 
-    if ($query) {
-        echo 'You have been Registration successfully';
+    if (mysqli_num_rows($has_email) >= 1) {
+        echo 'Email already exits! try another email';
+    } else {
+        $query = mysqli_query($connection, "INSERT INTO users2 (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password') ");
+
+        if ($query) {
+            echo 'You have been Registration successfully';
+        }
     }
 
     die();
