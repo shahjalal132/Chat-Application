@@ -6,6 +6,15 @@ if (!user_logged_in()) {
   header('location: index.php');
 }
 
+if (isset($_POST['chatUpdate'])) {
+  $email = $_SESSION['email'];
+  $message = $_POST['message'];
+
+  $insert = $connection->query("INSERT INTO conversation (email, message) VALUES ('$email', '$message')  ");
+
+  die();
+}
+
 
 ?>
 
@@ -27,11 +36,33 @@ if (!user_logged_in()) {
 
 <body>
 
-  <h2 class="text-center text-warning mt-5">This is chat page</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
 
-  <a class="btn btn-danger ms-5" href="logout.php">Log Out</a>
+      <div class="col-md-4 box shadow p-3 mt-5">
+        <h2 class="text-center text-light">Chat Box</h2>
+        <form action="" method="post" class="send_message">
+
+          <div class="mb-3">
+            <label for="message" class="form-label text-light">Message :</label>
+            <input type="text" name="message" id="message" class="form-control user_message" placeholder="Write Your Message" aria-describedby="helpId">
+          </div>
+          <button type="submit" class="btn btn-light">Send</button>
+
+        </form>
+      </div>
+
+      <div class="col-md-4">
+        <a class="btn btn-outline-light mt-5 ms-5" href="logout.php">Log Out</a>
+      </div>
+    </div>
+  </div>
 
 
+
+  <script src="js/jquery.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>

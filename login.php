@@ -24,6 +24,7 @@ if (isset($_POST['login'])) {
         $_SESSION['login'] = 'successfull';
         $_SESSION['first_name'] = $db_firstName;
         $_SESSION['last_name'] = $db_lastName;
+        $_SESSION['email'] = $email;
 
         header('location: chat.php');
     }

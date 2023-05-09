@@ -49,4 +49,23 @@ $(document).ready(function () {
       },
     });
   });
+
+  // Chat Message
+  $(".send_message").submit(function () {
+    var message = $(".user_message").val();
+
+    $.ajax({
+      type: "POST",
+      url: "chat.php",
+      data: {
+        chatUpdate: "",
+        message: message,
+      },
+      success: function (response) {
+        $(".user_message").val("");
+      },
+    });
+
+    return false;
+  });
 });
