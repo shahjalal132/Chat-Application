@@ -27,6 +27,8 @@ if (isset($_POST['login'])) {
         $_SESSION['email'] = $email;
 
         header('location: chat.php');
+    }else{
+        echo 'Password not matched';
     }
 
     die();

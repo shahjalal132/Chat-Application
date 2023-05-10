@@ -17,16 +17,11 @@ if (isset($_POST['chatUpdate'])) {
 
 if (isset($_POST['beUpdate'])) {
 
-
   $messages = mysqli_query($connection, "SELECT * FROM conversation");
 
-  $first_name = $_SESSION['first_name'];
-  $last_name = $_SESSION['last_name'];
-
-  foreach ($messages as $message) : ?>
-    <p><span class="text-success full_name"> <?php echo $first_name ?> <?php echo $last_name ?> : </span> <?php echo $message['message'] ?> </p>
-
-<?php endforeach;
+  while ($rows = mysqli_fetch_assoc($messages)) {
+    echo '<p><span class="text-success full_name"> '.$rows['email'].' </span> '.$rows['message'].' </p>';
+  }
 
   die();
 }
@@ -65,10 +60,13 @@ if (isset($_POST['beUpdate'])) {
           <button type="submit" class="btn btn-light">Send</button>
 
         </form>
+
+        <a class="btn btn-danger mt-3" href="logout.php">Log Out</a>
+
       </div>
 
       <div class="col-md-7 shadow-lg message_box bg-light mt-5 p-3 ms-auto" id="message_box">
-
+        
       </div>
 
     </div>
