@@ -20,7 +20,13 @@ if (isset($_POST['beUpdate'])) {
   $messages = mysqli_query($connection, "SELECT * FROM conversation");
 
   while ($rows = mysqli_fetch_assoc($messages)) {
-    echo '<p><span class="text-success full_name"> '.$rows['email'].' </span> '.$rows['message'].' </p>';
+
+    $em = $rows['email'];
+
+    $query = mysqli_query($connection, "SELECT * FROM users2 WHERE email = '$em'");
+    $query_value = mysqli_fetch_assoc($query);
+
+    echo '<p><span class="text-success full_name"> ' . $query_value['first_name'] . ' ' . $query_value['last_name']  . ' : </span> ' . $rows['message'] . ' </p>';
   }
 
   die();
@@ -65,8 +71,8 @@ if (isset($_POST['beUpdate'])) {
 
       </div>
 
-      <div class="col-md-7 shadow-lg message_box bg-light mt-5 p-3 ms-auto" id="message_box">
-        
+      <div class="col-md-7 col-sm-12 shadow message_box bg-light mt-5 p-3 ms-auto" id="message_box">
+
       </div>
 
     </div>
