@@ -13,9 +13,23 @@ if (isset($_POST['chatUpdate'])) {
   $insert = $connection->query("INSERT INTO conversation (email, message) VALUES ('$email', '$message')  ");
 
   die();
+};
+
+if (isset($_POST['beUpdate'])) {
+
+
+  $messages = mysqli_query($connection, "SELECT * FROM conversation");
+
+  $first_name = $_SESSION['first_name'];
+  $last_name = $_SESSION['last_name'];
+
+  foreach ($messages as $message) : ?>
+    <p><span class="text-success full_name"> <?php echo $first_name ?> <?php echo $last_name ?> : </span> <?php echo $message['message'] ?> </p>
+
+<?php endforeach;
+
+  die();
 }
-
-
 ?>
 
 <!doctype html>
@@ -38,10 +52,10 @@ if (isset($_POST['chatUpdate'])) {
 
   <div class="container">
     <div class="row">
-      <div class="col-md-4"></div>
 
       <div class="col-md-4 box shadow p-3 mt-5">
         <h2 class="text-center text-light">Chat Box</h2>
+
         <form action="" method="post" class="send_message">
 
           <div class="mb-3">
@@ -53,9 +67,10 @@ if (isset($_POST['chatUpdate'])) {
         </form>
       </div>
 
-      <div class="col-md-4">
-        <a class="btn btn-outline-light mt-5 ms-5" href="logout.php">Log Out</a>
+      <div class="col-md-7 shadow-lg message_box bg-light mt-5 p-3 ms-auto" id="message_box">
+
       </div>
+
     </div>
   </div>
 

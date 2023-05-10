@@ -68,4 +68,20 @@ $(document).ready(function () {
 
     return false;
   });
+
+  // Auto Update Chat Message
+
+  setInterval(function () {
+    $.ajax({
+      type: "POST",
+      url: "chat.php",
+      data: {
+        beUpdate: "",
+      },
+      success: function (result) {
+        $(".message_box").html(result);
+      },
+    });
+  }, 50);
+
 });
